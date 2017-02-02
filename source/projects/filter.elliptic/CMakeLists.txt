@@ -9,18 +9,26 @@ include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 #############################################################
 
 
-include_directories( 
+include_directories(
 	"${C74_INCLUDES}"
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../dsp-filters/shared/DSPFilters/include"
+)
+
+
+file(GLOB DSP_FILTERS
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../dsp-filters/shared/DSPFilters/include/DSPFilters/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../dsp-filters/shared/DSPFilters/source/*.cpp"
 )
 
 
 set( SOURCE_FILES
 	${PROJECT_NAME}.cpp
+	${DSP_FILTERS}
 )
 
 
-add_library( 
-	${PROJECT_NAME} 
+add_library(
+	${PROJECT_NAME}
 	MODULE
 	${SOURCE_FILES}
 )

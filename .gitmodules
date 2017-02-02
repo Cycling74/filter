@@ -1,3 +1,6 @@
 [submodule "source/min-api"]
 	path = source/min-api
 	url = https://github.com/Cycling74/min-api.git
+[submodule "source/dsp-filters"]
+	path = source/dsp-filters
+	url = https://github.com/tap/DSPFilters.git
