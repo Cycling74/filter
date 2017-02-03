@@ -47,14 +47,24 @@
 			<description>Acceptable passband ripple in magnitude response. </description>
 		</attribute>
 
-		<attribute name='rolloff' get='1' set='1' type='float64' size='1' >
-			<digest>Order of the filter</digest>
-			<description>Order of the filter. </description>
+		<attribute name='response' get='1' set='1' type='symbol' size='1' >
+			<digest>Response or shape of the filter</digest>
+			<description>Response or shape of the filter. </description>
+		</attribute>
+
+		<attribute name='bandwidth' get='1' set='1' type='float64' size='1' >
+			<digest>Width of the band in Hz for bandpass and bandstop filters</digest>
+			<description>Width of the band in Hz for bandpass and bandstop filters. </description>
 		</attribute>
 
 		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
-			<digest>Cutoff frequency of the filter</digest>
-			<description>Cutoff frequency of the filter. </description>
+			<digest>Cutoff/center frequency of the filter</digest>
+			<description>Cutoff/center frequency of the filter. </description>
+		</attribute>
+
+		<attribute name='rolloff' get='1' set='1' type='float64' size='1' >
+			<digest>Order of the filter</digest>
+			<description>Order of the filter. </description>
 		</attribute>
 
 		<attribute name='order' get='1' set='1' type='long' size='1' >

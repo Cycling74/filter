@@ -38,13 +38,38 @@
 		"subpatcher_template" : "tap.template",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 780.0, 735.0, 120.0, 21.0 ],
+					"presentation_rect" : [ 781.0, 777.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "ripple -1db"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 205.0, 285.0, 54.0, 23.0 ],
+					"style" : "",
+					"text" : "*~ 1000"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-12",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 780.0, 820.0, 120.0, 35.0 ],
-					"presentation_rect" : [ 780.0, 818.0, 0.0, 0.0 ],
+					"patching_rect" : [ 780.0, 760.0, 120.0, 35.0 ],
 					"style" : "",
 					"text" : "rolloff (transition band) -2.58"
 				}
@@ -57,7 +82,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 920.0, 685.0, 115.0, 50.0 ],
+					"patching_rect" : [ 920.0, 685.0, 119.0, 50.0 ],
 					"style" : "",
 					"text" : "10th-order \n(internally equivalent to 5 biquads)"
 				}
@@ -314,7 +339,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 705.0, 45.0, 69.0, 23.0 ],
 					"style" : "",
-					"text" : "loadmess 7"
+					"text" : "loadmess 8"
 				}
 
 			}
@@ -387,7 +412,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 475.0, 86.0, 193.0, 21.0 ],
 					"style" : "",
-					"text" : "7th order = 3 biquads"
+					"text" : "8th order = 4 biquads"
 				}
 
 			}
@@ -687,9 +712,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 810.0, 205.0, 207.0, 25.0 ],
+					"patching_rect" : [ 810.0, 205.0, 80.0, 25.0 ],
 					"style" : "",
-					"text" : "filter.elliptic bandstop @order 10"
+					"text" : "filter.elliptic"
 				}
 
 			}
@@ -772,7 +797,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 205.0, 280.0, 123.0, 23.0 ],
+					"patching_rect" : [ 205.0, 255.0, 123.0, 23.0 ],
 					"style" : "",
 					"text" : "windowed-fft~ 1024"
 				}
@@ -940,7 +965,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-38", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-15", 0 ]
@@ -1083,6 +1108,15 @@
 					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-34", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-38", 0 ]
 				}
 
 			}
