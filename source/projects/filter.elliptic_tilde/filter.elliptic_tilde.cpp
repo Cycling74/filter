@@ -1,7 +1,7 @@
-/// @file	
-///	@copyright	Copyright (c) 2017, Cycling '74
+/// @file
+/// @copyright	Copyright (c) 2017, Cycling '74
 /// @author		Timothy Place
-///	@license	Usage of this file and its contents is governed by the MIT License
+/// @license	Usage of this file and its contents is governed by the MIT License
 
 #include "DspFilters/Elliptic.h"
 using namespace Dsp::Elliptic::Design;
@@ -11,7 +11,7 @@ using namespace Dsp::Elliptic::Design;
 class elliptic : public filter<elliptic,2>, public vector_operator {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
+	MIN_DESCRIPTION { "Nth-order elliptic filter" };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.elliptic" };

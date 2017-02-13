@@ -1,7 +1,7 @@
-/// @file	
-///	@copyright	Copyright (c) 2017, Cycling '74
+/// @file
+/// @copyright	Copyright (c) 2017, Cycling '74
 /// @author		Timothy Place
-///	@license	Usage of this file and its contents is governed by the MIT License
+/// @license	Usage of this file and its contents is governed by the MIT License
 
 #include "c74_min.h"
 #include "DspFilters/Filter.h"
