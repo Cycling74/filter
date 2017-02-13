@@ -8,7 +8,7 @@ using namespace Dsp::Butterworth::Design;
 #include "../filter.h"
 
 
-class butterworth : public filter<butterworth,1> {
+class butterworth : public filter<butterworth,1,false,false> {
 public:
 
 	MIN_DESCRIPTION { "Nth-order butterworth filter" };

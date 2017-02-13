@@ -9,7 +9,7 @@
 using namespace c74::min;
 
 
-template<class T, int channel_count>
+template<class T, int channel_count, bool has_ripple = true, bool has_rolloff = true>
 class filter : public object<T> {
 public:
 
@@ -42,11 +42,13 @@ public:
 
 	attribute<double> ripple { this, "ripple", 3.0,
 		description { "Acceptable passband ripple in magnitude response." },
+		visibility { has_ripple ? visibility::show : visibility::disable }
 	};
 
 
 	attribute<double> rolloff { this, "rolloff", 0.1,
 		description { "Order of the filter." },
+		visibility { has_ripple ? visibility::show : visibility::disable }
 	};
 
 

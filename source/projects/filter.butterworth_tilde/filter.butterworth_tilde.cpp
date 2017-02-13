@@ -8,7 +8,7 @@ using namespace Dsp::Butterworth::Design;
 #include "../filter.h"
 
 
-class butterworth : public filter<butterworth,2>, public vector_operator {
+class butterworth : public filter<butterworth,2,false,false>, public vector_operator {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
