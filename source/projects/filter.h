@@ -48,7 +48,7 @@ public:
 
 	attribute<double> rolloff { this, "rolloff", 0.1,
 		description { "Order of the filter." },
-		visibility { has_ripple ? visibility::show : visibility::disable }
+		visibility { has_rolloff ? visibility::show : visibility::disable }
 	};
 
 
