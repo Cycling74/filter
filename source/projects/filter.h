@@ -103,7 +103,9 @@ private:
 	}
 
 
-	void do_update() {
+	template<bool update_ripple = has_ripple>
+	typename enable_if<update_ripple>::type
+	do_update() {
 
 		// if an update is already pending then we wait to try again in a moment
 		// we can't update the request at this point because the audio thread might be accessing it
@@ -131,6 +133,46 @@ private:
 					order,
 					frequency,
 					ripple,
+					rolloff,
+				}});
+			}
+			m_update_pending = true;
+		}
+	}
+
+
+	template<bool update_ripple = has_ripple>
+	typename enable_if<!update_ripple>::type
+	do_update() {
+
+		// if an update is already pending then we wait to try again in a moment
+		// we can't update the request at this point because the audio thread might be accessing it
+
+		if (m_update_pending)
+			update.set();
+		else {
+			double order = (int)this->order;
+
+			create_pending_filter();
+
+			auto rolloff = (double)this->rolloff;
+			if (rolloff < 1.0)
+				rolloff = 1.0;
+
+			if (m_is_bandpass_or_bandstop) {
+				m_filter_pending->setParams({{
+					samplerate(),
+					order,
+					frequency,
+					bandwidth,
+					rolloff,
+				}});
+			}
+			else {
+				m_filter_pending->setParams({{
+					samplerate(),
+					order,
+					frequency,
 					rolloff,
 				}});
 			}
