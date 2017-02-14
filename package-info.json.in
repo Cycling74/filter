@@ -1,7 +1,7 @@
 {
 	"author" : "Cycling '74",
-	"description" : "Lightweight reference implementation of a package built using the Min-API.",
-	"homepatcher" : "min-devkit.maxpat",
+	"description" : "Filtering toolbox and resources for audio, visuals, smoothing, and control.",
+	"homepatcher" : "Filter Overview.maxpat",
 	"max_version_min" : "7.1",
 	"name" : "@C74_PACKAGE_NAME@",
 	"os" : {
@@ -14,9 +14,9 @@
 			"min_version" : "none"
 		}
 	},
-	"package_extra" : { 
+	"package_extra" : {
 		"reverse_domain" : "com.cycling74",
-		"copyright" : "Copyright (c) 2016 Cycling '74"
+		"copyright" : "Copyright (c) 2017 Cycling '74"
 	},
 	"tags" : [ ],
 	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
