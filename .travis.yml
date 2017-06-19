@@ -48,7 +48,7 @@ deploy:
   bucket: cycling74-ci
   skip_cleanup: true
   local-dir: dist
-  upload-dir: min-devkit
+  upload-dir: filter
   acl: public_read
   on:
-    repo: Cycling74/min-devkit
+    repo: Cycling74/filter
