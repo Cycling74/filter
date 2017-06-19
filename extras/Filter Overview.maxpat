@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -43,7 +43,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1120.0, 730.0, 260.0, 35.0 ],
+					"patching_rect" : [ 1120.0, 735.0, 260.0, 35.0 ],
 					"style" : "",
 					"text" : "All filters displayed are 8th-order lowpass filters with a frequency of 2000 Hz."
 				}
@@ -69,22 +69,22 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1100.0, 545.0, 305.0, 78.0 ],
+					"patching_rect" : [ 1165.0, 550.0, 260.0, 78.0 ],
 					"style" : "",
-					"text" : "The Elliptic filter combines elements of both the Chebyshev filters to produce a maximally-steep rolloff. Attributes allow you to trade off both passband ripple and stopband rolloff to obtain the desired steep transition."
+					"text" : "The Elliptic filter combines elements of both of the Chebyshev filters to produce a maximally-steep rolloff. Attributes allow you to trade off both passband ripple and stopband rolloff to obtain the desired steep transition."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-31",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1125.0, 465.0, 305.0, 64.0 ],
+					"patching_rect" : [ 1125.0, 460.0, 305.0, 78.0 ],
 					"style" : "",
-					"text" : "Similar to the Chebyshev1 except that the non-linearities are in the stop-band. The attribute @rolloff defines the floor of the stopband and trades-off the amount of attenuation against the steepness of the rolloff."
+					"text" : "Similar to the Chebyshev1 except that the non-linearities are in the stop-band, where they presumably are not audible. The attribute @rolloff defines the floor of the stopband and trades-off the amount of attenuation against the steepness of the rolloff."
 				}
 
 			}
@@ -97,7 +97,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1065.0, 375.0, 367.0, 78.0 ],
 					"style" : "",
-					"text" : "Provides a sharper rolloff than any of the monotonic filters (Bessel, Butterworth, or Legendre) but introduces ripples in the passband -- both in the magnitude and the phase responses. The amount of ripple can be controlled with an attribute which trade off the amount of ripple against the steepness of the rolloff."
+					"text" : "Provides a sharper rolloff than any of the monotonic filters (Bessel, Butterworth, or Legendre) but introduces ripples in the passband -- both in the magnitude and the phase responses. The amount of ripple can be controlled with an attribute which trades off the amount of ripple against the steepness of the rolloff."
 				}
 
 			}
@@ -173,9 +173,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 895.0, 780.0, 180.0, 64.0 ],
+					"patching_rect" : [ 895.0, 780.0, 205.0, 64.0 ],
 					"style" : "",
-					"text" : "elliptic is the most non-linear, though the non-linearities in the attenuated frequencies are unlikely to be consequential."
+					"text" : "elliptic (orange) is the most non-linear, though the non-linearities in the attenuated frequencies are unlikely to be consequential."
 				}
 
 			}
@@ -186,9 +186,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 895.0, 730.0, 180.0, 35.0 ],
+					"patching_rect" : [ 895.0, 730.0, 199.0, 35.0 ],
 					"style" : "",
-					"text" : "bessel is the flattest indicating that has maximally linear phase."
+					"text" : "bessel (blue) is the flattest indicating that has maximally linear phase."
 				}
 
 			}
@@ -208,6 +208,7 @@
 , 			{
 				"box" : 				{
 					"domainlabel" : "normalized frequency",
+					"gridcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
 					"id" : "obj-20",
 					"margins" : [ 8.0, 8.0, 20.0, 50.0 ],
 					"maxclass" : "plot~",
@@ -345,6 +346,7 @@
 , 			{
 				"box" : 				{
 					"domainlabel" : "normalized frequency",
+					"gridcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
 					"id" : "obj-42",
 					"margins" : [ 8.0, 8.0, 20.0, 50.0 ],
 					"maxclass" : "plot~",
@@ -491,7 +493,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -927,7 +929,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1363,7 +1365,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1799,7 +1801,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2235,7 +2237,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2671,7 +2673,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3099,6 +3101,7 @@
 				"box" : 				{
 					"audioframesize" : 1024,
 					"domainlabel" : "Frequency (Hz)",
+					"gridcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"id" : "obj-35",
 					"margins" : [ 8.0, 8.0, 20.0, 50.0 ],
 					"maxclass" : "plot~",
