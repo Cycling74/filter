@@ -36,6 +36,10 @@ build_script:
   - if exist externals cp -r externals %APPVEYOR_PROJECT_NAME%
   - if exist extras cp -r extras %APPVEYOR_PROJECT_NAME%
   - if exist help cp -r help %APPVEYOR_PROJECT_NAME%
+  - if exist init cp -r init %APPVEYOR_PROJECT_NAME%
+  - if exist java-classes cp -r java-classes %APPVEYOR_PROJECT_NAME%
+  - if exist java-doc cp -r java-doc %APPVEYOR_PROJECT_NAME%
+  - if exist patchers cp -r patchers %APPVEYOR_PROJECT_NAME%
   - cp icon.png %APPVEYOR_PROJECT_NAME%
   - cp License.md %APPVEYOR_PROJECT_NAME%
   - cp package-info.json %APPVEYOR_PROJECT_NAME%
@@ -52,3 +56,14 @@ artifacts:
     path: '*.zip'
   - name: Log files
     path: '*.log'
+
+deploy:
+  provider: S3
+  access_key_id: AKIAIWE3SI2TMXC5AJBA
+  secret_access_key:
+    secure: PXJw4guo+r6IdUYK6t8rW01Gi0mWHPmyH+Pa6UmZePtgV1iXaZYoO2R9CgoCQ80y
+  bucket: cycling74-ci
+  folder: $(APPVEYOR_PROJECT_NAME)
+  region: us-west-2
+  set_public: true
+  artifact: "$(APPVEYOR_PROJECT_NAME)-win-$(platform)-$(SHORT_COMMIT).zip"
