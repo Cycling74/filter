@@ -54,7 +54,7 @@ public:
 
 	message<> bang { this, "bang", "Clear the filter history.",
 		MIN_FUNCTION {
-			m_filter.reset();
+			m_filter->reset();
 			return {};
 		}
 	};
