@@ -11,7 +11,7 @@ using namespace Dsp::Elliptic::Design;
 using namespace c74::min;
 
 
-class jit_elliptic : public object<jit_elliptic>, matrix_operator {
+class jit_elliptic : public object<jit_elliptic>, public matrix_operator {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic filter" };
@@ -22,8 +22,9 @@ public:
 	inlet<>		in	{ this, "(matrix) input to be filtered", "matrix" };
 	outlet<>	out	{ this, "(matrix) filtered output", "matrix" };
 
-	jit_elliptic(const atoms& args = {}) {
-
+	jit_elliptic(const atoms& args = {})
+	: matrix_operator(false)
+	{
 		auto planecount = 4;
 		for (auto i=0; i<planecount; ++i) {
 			m_filters.push_back(std::make_unique<Dsp::FilterDesign<LowPass<24>, 1>>());

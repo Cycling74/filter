@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 4.0, 45.0, 1918.0, 1155.0 ],
+		"rect" : [ 2.0, 45.0, 1918.0, 1155.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,303 @@
 		"subpatcher_template" : "tap.template",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 4,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 0.0, 65.0, 1914.0, 1079.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Lato Light",
+						"gridonopen" : 1,
+						"gridsize" : [ 5.0, 5.0 ],
+						"gridsnaponopen" : 2,
+						"objectsnaponopen" : 0,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 2,
+						"toptoolbarpinned" : 2,
+						"righttoolbarpinned" : 2,
+						"bottomtoolbarpinned" : 2,
+						"toolbars_unpinned_last_save" : 15,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "tap",
+						"subpatcher_template" : "tap.template",
+						"visible" : 1,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 50.0, 120.0, 35.0, 35.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "jit.pwindow",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 975.0, 395.0, 960.0, 540.0 ],
+									"presentation_rect" : [ 1052.0, 400.0, 960.0, 540.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 445.0, 340.0, 78.0, 23.0 ],
+									"style" : "",
+									"text" : "size 960 540"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "jit.pwindow",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 5.0, 395.0, 960.0, 540.0 ],
+									"presentation_rect" : [ 0.0, 0.0, 960.0, 540.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"color" : [ 0.317647, 0.654902, 0.976471, 1.0 ],
+									"fontsize" : 14.0,
+									"id" : "obj-45",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "jit_matrix", "" ],
+									"patching_rect" : [ 35.0, 265.0, 94.0, 25.0 ],
+									"style" : "",
+									"text" : "filter.jit.elliptic"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Lato Light",
+									"fontsize" : 12.0,
+									"id" : "obj-6",
+									"maxclass" : "jit.fpsgui",
+									"mode" : 3,
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 210.0, 260.0, 80.0, 37.0 ],
+									"presentation_rect" : [ 262.0, 267.0, 0.0, 0.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Lato Light",
+									"fontsize" : 12.0,
+									"id" : "obj-5",
+									"maxclass" : "jit.fpsgui",
+									"mode" : 3,
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 235.0, 120.0, 80.0, 37.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "jit_matrix", "" ],
+									"patching_rect" : [ 25.0, 165.0, 139.0, 23.0 ],
+									"style" : "",
+									"text" : "jit.matrix 4 char 960 540"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"clipheight" : 60.0,
+									"data" : 									{
+										"clips" : [ 											{
+												"filename" : "sunflower.mp4",
+												"filekind" : "moviefile",
+												"loop" : 0,
+												"content_state" : 												{
+													"outputmode" : [ 1 ],
+													"out_name" : [ "u747000557" ],
+													"dim" : [ 1, 1 ],
+													"colormode" : [ "argb" ],
+													"framereport" : [ 0 ],
+													"usesrcrect" : [ 0 ],
+													"looppoints" : [ 0, 0 ],
+													"texture_name" : [ "u459000555" ],
+													"interp" : [ 0 ],
+													"dstrect" : [ 0, 0, 1, 1 ],
+													"loopreport" : [ 0 ],
+													"rate" : [ 1.0 ],
+													"output_texture" : [ 0 ],
+													"engine" : [ "avf" ],
+													"autostart" : [ 1 ],
+													"srcrect" : [ 0, 0, 1, 1 ],
+													"time" : [ 0 ],
+													"loopend" : [ 0 ],
+													"automatic" : [ 0 ],
+													"adapt" : [ 1 ],
+													"time_secs" : [ 0.0 ],
+													"moviefile" : [ "" ],
+													"drawto" : [ "" ],
+													"loopstart" : [ 0 ],
+													"position" : [ 0.0 ],
+													"vol" : [ 1.0 ],
+													"usedstrect" : [ 0 ],
+													"unique" : [ 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"id" : "obj-3",
+									"maxclass" : "jit.playlist",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "jit_matrix", "", "dictionary" ],
+									"patching_rect" : [ 5.0, 30.0, 300.0, 60.0 ],
+									"style" : ""
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"order" : 1,
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 0,
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"order" : 0,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-45", 0 ],
+									"order" : 2,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 1,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-45", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+ ],
+						"styles" : [ 							{
+								"name" : "tap",
+								"default" : 								{
+									"fontname" : [ "Lato Light" ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 185.0, 195.0, 48.0, 23.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"fontname" : "Lato Light",
+						"globalpatchername" : "",
+						"style" : "tap",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p video"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-62",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -60,7 +357,6 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "list", "", "", "" ],
 					"patching_rect" : [ 5.0, 680.0, 200.0, 200.0 ],
-					"presentation_rect" : [ 22.999989, 685.0, 0.0, 0.0 ],
 					"rows" : 100
 				}
 
@@ -91,7 +387,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 540.0, 490.0, 94.0, 25.0 ],
-					"presentation_rect" : [ 426.600006, 483.200012, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "filter.jit.elliptic"
 				}
@@ -117,7 +412,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 740.0, 330.0, 50.0, 23.0 ],
-					"presentation_rect" : [ 626.799988, 325.799988, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "setall 1."
 				}
@@ -155,7 +449,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 370.0, 265.000031, 24.0, 24.0 ],
+					"patching_rect" : [ 340.0, 215.0, 65.0, 65.0 ],
 					"style" : ""
 				}
 
@@ -1313,6 +1607,12 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "sunflower.mp4",
+				"bootpath" : "C74:/media/jitter",
+				"type" : "mpg4",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "filter.jit.elliptic.mxo",
 				"type" : "iLaX"
 			}
