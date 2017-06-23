@@ -8,7 +8,7 @@ using namespace Dsp::Elliptic::Design;
 #include "../filter.h"
 
 
-class elliptic : public filter_mop<elliptic> {
+class jit_elliptic : public filter_mop<jit_elliptic> {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic filter" };
@@ -19,10 +19,10 @@ public:
 	inlet<>		in	{ this, "(matrix) input to be filtered", "matrix" };
 	outlet<>	out	{ this, "(matrix) filtered output", "matrix" };
 
-	elliptic(const atoms& args = {})
+	jit_elliptic(const atoms& args = {})
 	: filter_mop(args)
 	{}
 };
 
 
-MIN_EXTERNAL(elliptic);
+MIN_EXTERNAL(jit_elliptic);
