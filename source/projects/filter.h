@@ -18,6 +18,12 @@ public:
 	}
 
 
+	queue update { this, MIN_FUNCTION {
+		do_update();
+		return {};
+	}};
+
+
 	attribute<int> order { this, "order", 8,
 		description { "Order of the filter." },
 //		range { 4, 24 }
@@ -70,12 +76,6 @@ public:
 			return { 0 };
 		}
 	};
-
-
-	queue update { this, MIN_FUNCTION {
-		do_update();
-		return {};
-	}};
 
 
 	virtual double samplerate() = 0;
@@ -177,6 +177,199 @@ private:
 				}});
 			}
 			m_update_pending = true;
+		}
+	}
+
+};
+
+
+
+template<class T, bool has_ripple = true, bool has_rolloff = true>
+class filter_mop : public object<T>, public matrix_operator {
+public:
+
+	filter_mop(const atoms& args)
+	: matrix_operator(false)		// disable the parallel processing matrix breakup
+	{
+		update.set();
+	}
+
+
+	queue update { this, MIN_FUNCTION {
+		do_update();
+		return {};
+	}};
+
+
+	attribute<int> maxplanecount { this, "maxplanecount", 4,
+		description { "Maximum number planes in the matrix to process." },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+		//		range { 1, 32 }
+	};
+
+
+	attribute<int> order { this, "order", 8,
+		description { "Order of the filter." },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+		//		range { 4, 24 }
+	};
+
+
+	attribute<symbol> response { this, "response", "lowpass",
+		description { "Response or shape of the filter." },
+		range { "lowpass", "highpass", "bandpass", "bandstop" },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+	};
+
+
+	attribute<double> frequency { this, "frequency", 0.25,
+		description { "Cutoff/center frequency of the filter." },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+	};
+
+
+	attribute<double> bandwidth { this, "bandwidth", 0.1,
+		description { "Width of the band in Hz for bandpass and bandstop filters." },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+	};
+
+
+	attribute<double> ripple { this, "ripple", 3.0,
+		description { "Acceptable passband ripple in magnitude response." },
+		visibility { has_ripple ? visibility::show : visibility::disable },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+	};
+
+
+	attribute<double> rolloff { this, "rolloff", 0.1,
+		description { "Order of the filter." },
+		visibility { has_rolloff ? visibility::show : visibility::disable },
+		setter { MIN_FUNCTION {	update.set(); return args; }}
+	};
+
+
+	message<> clear { this, "clear", "Clear the filter history.",
+		MIN_FUNCTION {
+			for (auto& filter : m_filters)
+				filter->reset();
+			return {};
+		}
+	};
+
+
+	template<class matrix_type, size_t planecount>
+	cell<matrix_type,planecount> calc_cell(cell<matrix_type,planecount> input, const matrix_info& info, matrix_coord& position) {
+		cell<matrix_type,planecount> output;
+
+		if (position.y() != m_y) {
+			m_y = position.y();
+			for (auto& filter : m_filters)
+				filter->reset();
+		}
+
+		for (auto plane=0; plane<info.planecount(); ++plane) {
+			double x[1];
+
+			if (is_same<matrix_type, unsigned char>::value)
+				x[0] = input[plane] / 255.0;
+			else
+				x[0] = input[plane];
+
+			double* y = x;
+			m_filters[plane]->process(1, &y);
+
+			if (is_same<matrix_type, unsigned char>::value)
+				output[plane] = *y * 255.0;
+			else
+				output[plane] = *y;
+		}
+		return output;
+	}
+
+
+protected:
+	vector<unique_ptr<Dsp::Filter>>	m_filters;
+	bool							m_is_bandpass_or_bandstop { false };
+	int								m_y {};
+
+
+private:
+
+	void create_filters() {
+		m_filters.clear();
+
+		for (auto i=0; i<maxplanecount; ++i) {
+			if (response == symbol("lowpass"))			m_filters.push_back(std::make_unique<Dsp::FilterDesign<LowPass<24>, 1>>());
+			else if (response == symbol("highpass"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<HighPass<24>,1>>());
+			else if (response == symbol("bandpass"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<BandPass<24>,1>>());
+			else if (response == symbol("bandstop"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<BandStop<24>,1>>());
+			else error("invalid response");
+		}
+		if (response == symbol("bandpass") || response == symbol("bandstop"))
+			m_is_bandpass_or_bandstop = true;
+	}
+
+
+	template<bool update_ripple = has_ripple>
+	typename enable_if<update_ripple>::type
+	do_update() {
+		double order = (int)this->order;
+
+		create_filters();
+
+		for (auto& filter : m_filters) {
+			if (m_is_bandpass_or_bandstop) {
+				filter->setParams({{
+					1.0,
+					order,
+					frequency, // normalized freq (half-band = 0.25)
+					bandwidth,
+					ripple,
+					rolloff,
+				}});
+			}
+			else {
+				filter->setParams({{
+					1.0,
+					order,
+					frequency, // normalized freq (half-band = 0.25)
+					ripple,
+					rolloff,
+				}});
+			}
+		}
+	}
+
+
+	template<bool update_ripple = has_ripple>
+	typename enable_if<!update_ripple>::type
+	do_update() {
+		double order = (int)this->order;
+
+		create_filters();
+
+		auto rolloff = (double)this->rolloff;
+		if (rolloff < 1.0)
+			rolloff = 1.0;
+
+		for (auto& filter : m_filters) {
+			if (m_is_bandpass_or_bandstop) {
+				filter->setParams({{
+					1.0,
+					order,
+					frequency,
+					bandwidth,
+					rolloff,
+				}});
+			}
+			else {
+				filter->setParams({{
+					1.0,
+					order,
+					frequency,
+					rolloff,
+				}});
+			}
 		}
 	}
 
