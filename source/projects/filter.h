@@ -191,64 +191,78 @@ public:
 	filter_mop(const atoms& args)
 	: matrix_operator(false)		// disable the parallel processing matrix breakup
 	{
-		update.set();
+		m_update.set();
 	}
 
 
-	queue update { this, MIN_FUNCTION {
+	queue m_update { this, MIN_FUNCTION {
 		do_update();
 		return {};
 	}};
 
 
-	attribute<int> maxplanecount { this, "maxplanecount", 4,
+	attribute<int> m_maxplanecount { this, "maxplanecount", 4,
 		description { "Maximum number planes in the matrix to process." },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 		//		range { 1, 32 }
 	};
 
 
-	attribute<int> order { this, "order", 8,
+
+	attribute<matrix_operator::iteration_direction> m_direction {
+		this,
+		"direction",
+		matrix_operator::iteration_direction::forward,
+		matrix_operator::iteration_direction_info,
+		setter { MIN_FUNCTION {
+			direction(args[0]);
+			return args;
+		}}
+	};
+
+
+
+	attribute<int> m_order { this, "order", 8,
 		description { "Order of the filter." },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 		//		range { 4, 24 }
 	};
 
 
-	attribute<symbol> response { this, "response", "lowpass",
+	attribute<symbol> m_response { this, "response", "lowpass",
 		description { "Response or shape of the filter." },
 		range { "lowpass", "highpass", "bandpass", "bandstop" },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 	};
 
 
-	attribute<double> frequency { this, "frequency", 0.25,
+	attribute<double> m_frequency { this, "frequency", 0.25,
 		description { "Cutoff/center frequency of the filter." },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 	};
 
 
-	attribute<double> bandwidth { this, "bandwidth", 0.1,
+	attribute<double> m_bandwidth { this, "bandwidth", 0.1,
 		description { "Width of the band in Hz for bandpass and bandstop filters." },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 	};
 
 
-	attribute<double> ripple { this, "ripple", 3.0,
+	attribute<double> m_ripple { this, "ripple", 3.0,
 		description { "Acceptable passband ripple in magnitude response." },
 		visibility { has_ripple ? visibility::show : visibility::disable },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 	};
 
 
-	attribute<double> rolloff { this, "rolloff", 0.1,
+	attribute<double> m_rolloff { this, "rolloff", 0.1,
 		description { "Order of the filter." },
 		visibility { has_rolloff ? visibility::show : visibility::disable },
-		setter { MIN_FUNCTION {	update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }}
 	};
 
 
-	message<> clear { this, "clear", "Clear the filter history.",
+	message<> m_clear { this, "clear", "Clear the filter history.",
 		MIN_FUNCTION {
 			for (auto& filter : m_filters)
 				filter->reset();
@@ -298,14 +312,14 @@ private:
 	void create_filters() {
 		m_filters.clear();
 
-		for (auto i=0; i<maxplanecount; ++i) {
-			if (response == symbol("lowpass"))			m_filters.push_back(std::make_unique<Dsp::FilterDesign<LowPass<24>, 1>>());
-			else if (response == symbol("highpass"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<HighPass<24>,1>>());
-			else if (response == symbol("bandpass"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<BandPass<24>,1>>());
-			else if (response == symbol("bandstop"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<BandStop<24>,1>>());
+		for (auto i=0; i<m_maxplanecount; ++i) {
+			if (m_response == symbol("lowpass"))		m_filters.push_back(std::make_unique<Dsp::FilterDesign<LowPass<24>, 1>>());
+			else if (m_response == symbol("highpass"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<HighPass<24>,1>>());
+			else if (m_response == symbol("bandpass"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<BandPass<24>,1>>());
+			else if (m_response == symbol("bandstop"))	m_filters.push_back(std::make_unique<Dsp::FilterDesign<BandStop<24>,1>>());
 			else error("invalid response");
 		}
-		if (response == symbol("bandpass") || response == symbol("bandstop"))
+		if (m_response == symbol("bandpass") || m_response == symbol("bandstop"))
 			m_is_bandpass_or_bandstop = true;
 	}
 
@@ -313,7 +327,7 @@ private:
 	template<bool update_ripple = has_ripple>
 	typename enable_if<update_ripple>::type
 	do_update() {
-		double order = (int)this->order;
+		double order = (int)m_order;
 
 		create_filters();
 
@@ -322,19 +336,19 @@ private:
 				filter->setParams({{
 					1.0,
 					order,
-					frequency, // normalized freq (half-band = 0.25)
-					bandwidth,
-					ripple,
-					rolloff,
+					m_frequency, // normalized freq (half-band = 0.25)
+					m_bandwidth,
+					m_ripple,
+					m_rolloff,
 				}});
 			}
 			else {
 				filter->setParams({{
 					1.0,
 					order,
-					frequency, // normalized freq (half-band = 0.25)
-					ripple,
-					rolloff,
+					m_frequency, // normalized freq (half-band = 0.25)
+					m_ripple,
+					m_rolloff,
 				}});
 			}
 		}
@@ -357,8 +371,8 @@ private:
 				filter->setParams({{
 					1.0,
 					order,
-					frequency,
-					bandwidth,
+					m_frequency,
+					m_bandwidth,
 					rolloff,
 				}});
 			}
@@ -366,7 +380,7 @@ private:
 				filter->setParams({{
 					1.0,
 					order,
-					frequency,
+					m_frequency,
 					rolloff,
 				}});
 			}
