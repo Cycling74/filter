@@ -8,7 +8,7 @@ using namespace Dsp::Butterworth::Design;
 #include "../filter.h"
 
 
-class butterworth : public filter<butterworth,1,false,false> {
+class butterworth : public filter<butterworth,false,false> {
 public:
 
 	MIN_DESCRIPTION { "Nth-order butterworth filter" };
@@ -16,9 +16,10 @@ public:
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic" };
 
-	inlet<>		in	{ this, "(number) input to be filtered" };
-	outlet<>	out	{ this, "(number) filtered output" };
+	inlet<>		m_inlet		{ this, "(number) input" };
+	outlet<>	m_outlet	{ this, "(number) output" };
 
+	
 	butterworth(const atoms& args = {})
 	: filter(args)
 	{}
@@ -46,7 +47,7 @@ public:
 			}
 			m_filter->process(1, &y);
 
-			out.send(*y);
+			m_outlet.send(*y);
 			return {};
 		}
 	};

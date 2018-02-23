@@ -8,7 +8,7 @@ using namespace Dsp::ChebyshevI::Design;
 #include "../filter.h"
 
 
-class chebyshev : public filter<chebyshev,1,true,false> {
+class chebyshev : public filter<chebyshev,true,false> {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
@@ -16,9 +16,10 @@ public:
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic" };
 
-	inlet<>		in	{ this, "(number) input to be filtered" };
-	outlet<>	out	{ this, "(number) filtered output" };
+	inlet<>		m_inlet		{ this, "(number) input" };
+	outlet<>	m_outlet	{ this, "(number) output" };
 
+	
 	chebyshev(const atoms& args = {})
 	: filter(args)
 	{}
@@ -46,8 +47,7 @@ public:
 			}
 			m_filter->process(1, &y);
 
-
-			out.send(*y);
+			m_outlet.send(*y);
 			return {};
 		}
 	};

@@ -8,7 +8,7 @@ using namespace Dsp::Elliptic::Design;
 #include "../filter.h"
 
 
-class elliptic : public filter<elliptic,2>, public vector_operator {
+class elliptic : public filter<elliptic>, public vector_operator {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic filter" };
@@ -16,10 +16,8 @@ public:
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.elliptic" };
 
-	inlet<>		in_left		{ this, "(signal) left channel input" };
-	inlet<>		in_right	{ this, "(signal) right channel input" };
-	outlet<>	out_left	{ this, "(signal) left channel output", "signal" };
-	outlet<>	out_right	{ this, "(signal) right channel output", "signal" };
+	inlet<>		m_inlet		{ this, "(signal) input" };
+	outlet<>	m_outlet	{ this, "(signal) output", "signal" };
 
 
 	elliptic(const atoms& args = {})

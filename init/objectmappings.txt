@@ -1,0 +1,6 @@
+max objectfile mc.filter.bessel~ mc.wrapper~ filter.bessel~ multichannel;
+max objectfile mc.filter.butterworth~ mc.wrapper~ filter.butterworth~ multichannel;
+max objectfile mc.filter.chebyshev1~ mc.wrapper~ filter.chebyshev1~ multichannel;
+max objectfile mc.filter.chebyshev2~ mc.wrapper~ filter.chebyshev2~ multichannel;
+max objectfile mc.filter.elliptic~ mc.wrapper~ filter.elliptic~ multichannel;
+max objectfile mc.filter.legendre~ mc.wrapper~ filter.legendre~ multichannel;

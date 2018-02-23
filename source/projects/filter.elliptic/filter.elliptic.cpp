@@ -8,7 +8,7 @@ using namespace Dsp::Elliptic::Design;
 #include "../filter.h"
 
 
-class elliptic : public filter<elliptic,1> {
+class elliptic : public filter<elliptic> {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic filter" };
@@ -16,9 +16,10 @@ public:
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic~" };
 
-	inlet<>		in	{ this, "(number) input to be filtered" };
-	outlet<>	out	{ this, "(number) filtered output" };
+	inlet<>		m_inlet		{ this, "(number) input" };
+	outlet<>	m_outlet	{ this, "(number) output" };
 
+	
 	elliptic(const atoms& args = {})
 	: filter(args)
 	{}
@@ -46,7 +47,7 @@ public:
 			}
 			m_filter->process(1, &y);
 
-			out.send(*y);
+			m_outlet.send(*y);
 			return {};
 		}
 	};

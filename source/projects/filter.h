@@ -9,7 +9,7 @@
 using namespace c74::min;
 
 
-template<class T, int channel_count, bool has_ripple = true, bool has_rolloff = true>
+template<class T, bool has_ripple = true, bool has_rolloff = true>
 class filter : public object<T> {
 public:
 
@@ -92,10 +92,10 @@ protected:
 private:
 	
 	void create_pending_filter() {
-		if (response == symbol("lowpass"))			m_filter_pending = std::make_unique<Dsp::FilterDesign<LowPass<24>,channel_count>>();
-		else if (response == symbol("highpass"))	m_filter_pending = std::make_unique<Dsp::FilterDesign<HighPass<24>,channel_count>>();
-		else if (response == symbol("bandpass"))	m_filter_pending = std::make_unique<Dsp::FilterDesign<BandPass<24>,channel_count>>();
-		else if (response == symbol("bandstop"))	m_filter_pending = std::make_unique<Dsp::FilterDesign<BandStop<24>,channel_count>>();
+		if (response == symbol("lowpass"))			m_filter_pending = std::make_unique<Dsp::FilterDesign<LowPass<24>,1>>();
+		else if (response == symbol("highpass"))	m_filter_pending = std::make_unique<Dsp::FilterDesign<HighPass<24>,1>>();
+		else if (response == symbol("bandpass"))	m_filter_pending = std::make_unique<Dsp::FilterDesign<BandPass<24>,1>>();
+		else if (response == symbol("bandstop"))	m_filter_pending = std::make_unique<Dsp::FilterDesign<BandStop<24>,1>>();
 		else error("invalid response");
 
 		if (response == symbol("bandpass") || response == symbol("bandstop"))

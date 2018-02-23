@@ -8,7 +8,7 @@ using namespace Dsp::Butterworth::Design;
 #include "../filter.h"
 
 
-class butterworth : public filter<butterworth,2,false,false>, public vector_operator {
+class butterworth : public filter<butterworth,false,false>, public vector_operator {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
@@ -16,10 +16,8 @@ public:
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.elliptic" };
 
-	inlet<>		in_left		{ this, "(signal) left channel input" };
-	inlet<>		in_right	{ this, "(signal) right channel input" };
-	outlet<>	out_left	{ this, "(signal) left channel output", "signal" };
-	outlet<>	out_right	{ this, "(signal) right channel output", "signal" };
+	inlet<>		m_inlet		{ this, "(signal) input" };
+	outlet<>	m_outlet	{ this, "(signal) output", "signal" };
 
 
 	butterworth(const atoms& args = {})
