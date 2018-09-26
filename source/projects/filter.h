@@ -18,7 +18,7 @@ public:
 	}
 
 
-	queue update { this, MIN_FUNCTION {
+	queue<> update { this, MIN_FUNCTION {
 		do_update();
 		return {};
 	}};
@@ -185,7 +185,7 @@ private:
 
 
 template<class T, bool has_ripple = true, bool has_rolloff = true>
-class filter_mop : public object<T>, public matrix_operator {
+class filter_mop : public object<T>, public matrix_operator<> {
 public:
 
 	filter_mop(const atoms& args)
@@ -195,7 +195,7 @@ public:
 	}
 
 
-	queue m_update { this, MIN_FUNCTION {
+	queue<> m_update { this, MIN_FUNCTION {
 		do_update();
 		return {};
 	}};
@@ -281,7 +281,7 @@ public:
 				filter->reset();
 		}
 
-		for (auto plane=0; plane<info.planecount(); ++plane) {
+		for (auto plane=0; plane<info.plane_count(); ++plane) {
 			double x[1];
 
 			if (is_same<matrix_type, unsigned char>::value)

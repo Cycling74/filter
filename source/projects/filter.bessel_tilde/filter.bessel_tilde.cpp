@@ -8,7 +8,7 @@ using namespace Dsp::Bessel::Design;
 #include "../filter.h"
 
 
-class bessel : public filter<bessel,false,false>, public vector_operator {
+class bessel : public filter<bessel,false,false>, public vector_operator<> {
 public:
 
 	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
@@ -31,13 +31,19 @@ public:
 			m_filter = std::move(m_filter_pending);
 			m_update_pending = false;
 		}
-		m_filter->process(output.framecount(), output.samples());
+		m_filter->process(output.frame_count(), output.samples());
 	}
 
 
 	double samplerate() {
 		return vector_operator::samplerate();
 	}
+
+    
+    void samplerate(double a_samplerate) {
+        vector_operator::samplerate(a_samplerate);
+    }
+    
 
 };
 
