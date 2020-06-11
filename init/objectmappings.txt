@@ -4,3 +4,5 @@ max objectfile mc.filter.chebyshev1~ mc.wrapper~ filter.chebyshev1~ multichannel
 max objectfile mc.filter.chebyshev2~ mc.wrapper~ filter.chebyshev2~ multichannel;
 max objectfile mc.filter.elliptic~ mc.wrapper~ filter.elliptic~ multichannel;
 max objectfile mc.filter.legendre~ mc.wrapper~ filter.legendre~ multichannel;
+max objectfile mc.filter.dcblock~ mc.wrapper~ filter.dcblock~ multichannel;
+max objectfile mc.filter.one~ mc.wrapper~ filter.one~ multichannel;

@@ -4,3 +4,6 @@
 [submodule "source/dsp-filters"]
 	path = source/dsp-filters
 	url = https://github.com/tap/DSPFilters.git
+[submodule "source/min-lib"]
+	path = source/min-lib
+	url = git@github.com:Cycling74/min-lib.git
