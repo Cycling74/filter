@@ -1,11 +1,10 @@
 # Filter
-[![Build Status](https://travis-ci.com/Cycling74/filter.svg?token=GAmnsUEo9aYasSF5pz8q&branch=master)](https://travis-ci.com/Cycling74/filter)[![Build status](https://ci.appveyor.com/api/projects/status/fv9ln8f036vnju3o/branch/master?svg=true)](https://ci.appveyor.com/project/c74/filter/branch/master)
-
+![CI](https://github.com/Cycling74/filter/workflows/CI/badge.svg)
 
 
 Filtering Toolbox for audio, visuals, and control data in Max.
 
-To get started, use the Max **Package Manager** or [download](https://s3-us-west-2.amazonaws.com/cycling74-ci/index.html?prefix=filter/) the latest builds directly.
+To get started, use the Max **Package Manager** or download from CI.
 
 ## Getting Started
 
@@ -30,8 +29,7 @@ Run `cmake -G Xcode ..` and then run `cmake --build .` or open the Xcode project
 
 If you are using Visual Studio, You can run `cmake --help` to get a list of the options available.  Assuming some version of Visual Studio 2015, the commands to generate the projects will look like this:
 
-* 32 bit: `cmake -G "Visual Studio 15 2017" ..`
-* 64 bit: `cmake -G "Visual Studio 15 2017 Win64" ..`
+* `cmake -G "Visual Studio 16 2019" ..`
 
 Having generated the projects, you can now build by opening the .sln file in the build folder with the Visual Studio app (just double-click the .sln file) or you can build on the command line like this:
 
