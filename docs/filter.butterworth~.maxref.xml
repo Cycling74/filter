@@ -6,8 +6,8 @@
 
 <c74object name='filter.butterworth~' category='audio,  filters'>
 
-	<digest>Nth-order elliptic lowpass filter </digest>
-	<description>Nth-order elliptic lowpass filter </description>
+	<digest>Nth-order Butterworth filter </digest>
+	<description>Nth-order Butterworth filter </description>
 
 
 	<!--METADATA-->
@@ -82,7 +82,7 @@
 		<seealso name='filterdetail' />
 		<seealso name='biquad~' />
 		<seealso name='cascade~' />
-		<seealso name='filter.elliptic' />
+		<seealso name='filter.butterworth' />
 	</seealsolist>
 
 

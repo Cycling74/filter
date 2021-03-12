@@ -6,8 +6,8 @@
 
 <c74object name='filter.legendre' category='filters'>
 
-	<digest>Nth-order elliptic lowpass filter </digest>
-	<description>Nth-order elliptic lowpass filter </description>
+	<digest>Nth-order Legendre filter </digest>
+	<description>Nth-order Legendre filter </description>
 
 
 	<!--METADATA-->
@@ -90,7 +90,7 @@
 		<seealso name='filterdesign' />
 		<seealso name='filterdetail' />
 		<seealso name='slide' />
-		<seealso name='filter.elliptic' />
+		<seealso name='filter.legendre~' />
 	</seealsolist>
 
 

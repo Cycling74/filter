@@ -11,10 +11,10 @@ using namespace Dsp::Legendre::Design;
 class legendre : public filter<legendre>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
+	MIN_DESCRIPTION { "Nth-order Legendre filter" };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.elliptic" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.legendre" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

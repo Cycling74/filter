@@ -6,8 +6,8 @@
 
 <c74object name='filter.butterworth' category='filters'>
 
-	<digest>Nth-order butterworth filter </digest>
-	<description>Nth-order butterworth filter </description>
+	<digest>Nth-order Butterworth filter </digest>
+	<description>Nth-order Butterworth filter </description>
 
 
 	<!--METADATA-->
@@ -90,7 +90,7 @@
 		<seealso name='filterdesign' />
 		<seealso name='filterdetail' />
 		<seealso name='slide' />
-		<seealso name='filter.elliptic' />
+		<seealso name='filter.butterworth' />
 	</seealsolist>
 
 

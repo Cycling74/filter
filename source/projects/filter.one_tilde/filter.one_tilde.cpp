@@ -24,7 +24,7 @@ private:
 
 class one : public object<one>, public sample_operator<1,2> {
 public:
-	MIN_DESCRIPTION {"One pole filter. "};
+	MIN_DESCRIPTION {"Single-channel, basic one-pole filter"};
 	MIN_TAGS {"audio, filters"};
 	MIN_AUTHOR {"Cycling '74"};
 	MIN_RELATED {"onepole~, filterdesign"};
@@ -35,28 +35,16 @@ public:
 
 	attribute<number> m_cutoff {this, "cutoff", false, description {"Cutoff frequency."}};
 
-/*	samples<2> operator()(sample x) {
-		sample diff = x - m_feedback;
-		sample y = m_integrator(diff * m_cutoff);
-		sample highpass = m_x - y;
-		m_x = x;
-		m_feedback = y;
-		return {y, highpass}; // lowpass, highpass
-	}
-*/
 	samples<2> operator()(sample x) {
 		sample diff = x - m_feedback;
 		sample y = m_integrator(diff * m_cutoff);
-//		sample highpass = m_x - y;
-//		m_x = x;
 		m_feedback = y;
-		return {y, 0.0}; // lowpass, highpass
+		return {y, 0.0};  // lowpass, highpass
 	}
 
 private:
 	integrator	m_integrator;
 	sample 		m_feedback {0};
-//	sample		m_x {0}; // have to delay input to keep in phase and keep response to 1 pole
 };
 
 MIN_EXTERNAL(one);

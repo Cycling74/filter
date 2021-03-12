@@ -11,10 +11,10 @@ using namespace Dsp::Butterworth::Design;
 class butterworth : public filter<butterworth,false,false> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order butterworth filter" };
+	MIN_DESCRIPTION { "Nth-order Butterworth filter" };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.butterworth" };
 
 	inlet<>		m_inlet		{ this, "(number) input" };
 	outlet<>	m_outlet	{ this, "(number) output" };

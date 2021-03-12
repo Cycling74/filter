@@ -11,10 +11,10 @@ using namespace Dsp::Butterworth::Design;
 class butterworth : public filter<butterworth,false,false>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
+	MIN_DESCRIPTION { "Nth-order Butterworth filter" };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.elliptic" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.butterworth" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

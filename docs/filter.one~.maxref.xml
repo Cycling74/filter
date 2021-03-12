@@ -6,8 +6,8 @@
 
 <c74object name='filter.one~' category='audio,  filters'>
 
-	<digest>One pole filter</digest>
-	<description>One pole filter. </description>
+	<digest>Single-channel, basic one-pole filter </digest>
+	<description>Single-channel, basic one-pole filter </description>
 
 
 	<!--METADATA-->

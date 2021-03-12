@@ -6,8 +6,8 @@
 
 <c74object name='filter.jit.chebyshev2' category='filters'>
 
-	<digest>Nth-order elliptic filter </digest>
-	<description>Nth-order elliptic filter </description>
+	<digest>Nth-order Chebyshev Type-II filter </digest>
+	<description>Nth-order Chebyshev Type-II filter </description>
 
 
 	<!--METADATA-->
@@ -90,7 +90,7 @@
 		<seealso name='filterdesign' />
 		<seealso name='filterdetail' />
 		<seealso name='slide' />
-		<seealso name='filter.elliptic~' />
+		<seealso name='filter.chebyshev2~' />
 	</seealsolist>
 
 

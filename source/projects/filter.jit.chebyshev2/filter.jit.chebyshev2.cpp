@@ -11,10 +11,10 @@ using namespace Dsp::ChebyshevII::Design;
 class jit_chebyshev2 : public filter_mop<jit_chebyshev2> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic filter" };
+	MIN_DESCRIPTION { "Nth-order Chebyshev Type-II filter" };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic~" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.chebyshev2~" };
 
 	inlet<>		in	{ this, "(matrix) input to be filtered", "matrix" };
 	outlet<>	out	{ this, "(matrix) filtered output", "matrix" };

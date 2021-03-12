@@ -11,10 +11,10 @@ using namespace Dsp::Legendre::Design;
 class jit_legendre : public filter_mop<jit_legendre> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic filter" };
+	MIN_DESCRIPTION { "Nth-order Legendre filter" };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic~" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.legendre~" };
 
 	inlet<>		in	{ this, "(matrix) input to be filtered", "matrix" };
 	outlet<>	out	{ this, "(matrix) filtered output", "matrix" };

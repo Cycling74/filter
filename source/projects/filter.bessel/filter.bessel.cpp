@@ -11,10 +11,10 @@ using namespace Dsp::Bessel::Design;
 class bessel : public filter<bessel,false,false> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
+	MIN_DESCRIPTION { "Nth-order Bessel filter" };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.bessel" };
 
 	inlet<>		m_inlet		{ this, "(number) input" };
 	outlet<>	m_outlet	{ this, "(number) output", "signal" };

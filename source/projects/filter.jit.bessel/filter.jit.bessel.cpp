@@ -11,10 +11,10 @@ using namespace Dsp::Bessel::Design;
 class jit_bessel : public filter_mop<jit_bessel> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic filter" };
+	MIN_DESCRIPTION { "Nth-order Bessel filter" };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic~" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.bessel~" };
 
 	inlet<>		in	{ this, "(matrix) input to be filtered", "matrix" };
 	outlet<>	out	{ this, "(matrix) filtered output", "matrix" };

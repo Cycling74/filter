@@ -11,10 +11,10 @@ using namespace Dsp::ChebyshevI::Design;
 class chebyshev : public filter<chebyshev,true,false> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic lowpass filter" };
+	MIN_DESCRIPTION { "Nth-order Chebyshev Type-I filter" };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.chebyshev1~" };
 
 	inlet<>		m_inlet		{ this, "(number) input" };
 	outlet<>	m_outlet	{ this, "(number) output" };

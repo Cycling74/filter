@@ -24,9 +24,9 @@ public:
 	}};
 
 
-	attribute<int> order { this, "order", 8,
+	attribute<int, threadsafe::no, limit::clamp> order { this, "order", 8,
 		description { "Order of the filter." },
-//		range { 4, 24 }
+		range { 4, 24 }
 	};
 
 
