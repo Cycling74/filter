@@ -36,8 +36,9 @@ public:
 	};
 
 
-	attribute<double> frequency { this, "frequency", 4000.0,
+	attribute<double, threadsafe::no, limit::clamp> frequency { this, "frequency", 4000.0,
 		description { "Cutoff/center frequency of the filter." },
+		range { 0.0, 22100.0 }
 	};
 
 
@@ -222,10 +223,10 @@ public:
 
 
 
-	attribute<int> m_order { this, "order", 8,
+	attribute<int, threadsafe::no, limit::clamp> m_order { this, "order", 8,
 		description { "Order of the filter." },
-		setter { MIN_FUNCTION {	m_update.set(); return args; }}
-		//		range { 4, 24 }
+		setter { MIN_FUNCTION {	m_update.set(); return args; }},
+		range { 4, 24 }
 	};
 
 
@@ -236,9 +237,10 @@ public:
 	};
 
 
-	attribute<double> m_frequency { this, "frequency", 0.25,
+	attribute<double, threadsafe::no, limit::clamp> m_frequency { this, "frequency", 0.25,
 		description { "Cutoff/center frequency of the filter." },
-		setter { MIN_FUNCTION {	m_update.set(); return args; }}
+		setter { MIN_FUNCTION {	m_update.set(); return args; }},
+		range { 0.0, 1.0 }
 	};
 
 

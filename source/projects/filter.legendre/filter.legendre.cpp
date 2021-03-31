@@ -11,7 +11,9 @@ using namespace Dsp::Legendre::Design;
 class legendre : public filter<legendre,false,false> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Legendre filter" };
+	MIN_DESCRIPTION { "Nth-order Legendre filter"
+					  "This object is intended mainly for plotting. "
+					  "For audio filtering, see <o>filter.legendre~</o>. " };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.legendre~" };

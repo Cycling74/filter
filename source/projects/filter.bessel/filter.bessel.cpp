@@ -11,13 +11,15 @@ using namespace Dsp::Bessel::Design;
 class bessel : public filter<bessel,false,false> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Bessel filter" };
+	MIN_DESCRIPTION { "Nth-order Bessel filter. "
+					  "This object is intended mainly for plotting. "
+					  "For audio filtering, see <o>filter.bessel~</o>. " };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.bessel" };
+	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.bessel~" };
 
 	inlet<>		m_inlet		{ this, "(number) input" };
-	outlet<>	m_outlet	{ this, "(number) output", "signal" };
+	outlet<>	m_outlet	{ this, "(number) output" };
 
 	
 	bessel(const atoms& args = {})

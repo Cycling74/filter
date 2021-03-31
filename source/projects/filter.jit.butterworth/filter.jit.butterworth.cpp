@@ -11,7 +11,9 @@ using namespace Dsp::Butterworth::Design;
 class jit_butterworth : public filter_mop<jit_butterworth> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Butterworth filter" };
+	MIN_DESCRIPTION { "Nth-order Butterworth filter. "
+					  "The Butterworth filter has a slightly faster rolloff than the Bessel filter. "
+					  "It has a maximally-flat magnitude in the passband." };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.butterworth~" };

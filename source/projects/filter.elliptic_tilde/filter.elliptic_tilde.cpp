@@ -11,10 +11,12 @@ using namespace Dsp::Elliptic::Design;
 class elliptic : public filter<elliptic>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic filter" };
+	MIN_DESCRIPTION { "Nth-order elliptic filter. "
+					  "The Elliptic filter combines elements of both Chebyshev filters to produce a maximally-steep rolloff. "
+					  "It is possible to configure the trade-off of the ripple in stop- and passbands." };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.elliptic" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };
