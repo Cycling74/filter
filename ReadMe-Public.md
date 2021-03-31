@@ -7,7 +7,7 @@ After installing, open the menu item **Extras > Filter Overview** to be guided t
 
 ## Contributors / Acknowledgements
 
-Coding, material development, and review by **Timothy Place**.
+Coding, material development, and review by **Timothy Place**. Maintenance and bugfixes by **Isabel Kaspriskie**.
 
 ## License
 
