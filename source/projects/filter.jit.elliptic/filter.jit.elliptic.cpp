@@ -11,7 +11,9 @@ using namespace Dsp::Elliptic::Design;
 class jit_elliptic : public filter_mop<jit_elliptic> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic filter" };
+	MIN_DESCRIPTION { "Nth-order elliptic filter. "
+					  "The Elliptic filter combines elements of both Chebyshev filters to produce a maximally-steep rolloff. "
+					  "It is possible to configure the trade-off of the ripple in stop- and passbands." };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic~" };

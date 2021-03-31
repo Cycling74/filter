@@ -6,8 +6,8 @@
 
 <c74object name='filter.chebyshev2~' category='audio,  filters'>
 
-	<digest>Nth-order Chebyshev Type-II filter </digest>
-	<description>Nth-order Chebyshev Type-II filter </description>
+	<digest>Nth-order Chebyshev Type-II filter</digest>
+	<description>Nth-order Chebyshev Type-II filter. The Chebyshev Type-II filter is similar to its Type-1 counterpart except ripples are introduced in the stopband (where they are likely less audible). It also has a slightly slower rolloff than Type-I. </description>
 
 
 	<!--METADATA-->
@@ -82,7 +82,6 @@
 		<seealso name='filterdetail' />
 		<seealso name='biquad~' />
 		<seealso name='cascade~' />
-		<seealso name='filter.chebyshev2' />
 	</seealsolist>
 
 

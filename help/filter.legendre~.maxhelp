@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 688.0, 163.0, 587.0, 503.0 ],
+		"rect" : [ 100.0, 100.0, 587.0, 503.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -148,7 +148,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 34.0, 127.0, 228.0, 104.0 ],
+					"patching_rect" : [ 34.0, 135.0, 228.0, 104.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -165,7 +165,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 9.0, 8.0, 555.0, 113.0 ]
+					"patching_rect" : [ 9.0, 8.0, 555.0, 125.0 ]
 				}
 
 			}
@@ -422,8 +422,8 @@
 , 			{
 				"name" : "rsliderGold",
 				"default" : 				{
-					"color" : [ 0.646639, 0.821777, 0.854593, 1.0 ],
-					"bgcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ]
+					"bgcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ],
+					"color" : [ 0.646639, 0.821777, 0.854593, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

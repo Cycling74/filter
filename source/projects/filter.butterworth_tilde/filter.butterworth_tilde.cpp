@@ -11,10 +11,12 @@ using namespace Dsp::Butterworth::Design;
 class butterworth : public filter<butterworth,false,false>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Butterworth filter" };
+	MIN_DESCRIPTION { "Nth-order Butterworth filter. "
+					  "The Butterworth filter has a slightly faster rolloff than the Bessel filter. "
+					  "It has a maximally-flat magnitude in the passband." };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.butterworth" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

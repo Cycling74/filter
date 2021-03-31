@@ -6,8 +6,8 @@
 
 <c74object name='filter.elliptic~' category='audio,  filters'>
 
-	<digest>Nth-order elliptic filter </digest>
-	<description>Nth-order elliptic filter </description>
+	<digest>Nth-order elliptic filter</digest>
+	<description>Nth-order elliptic filter. The Elliptic filter combines elements of both Chebyshev filters to produce a maximally-steep rolloff. It is possible to configure the trade-off of the ripple in stop- and passbands. </description>
 
 
 	<!--METADATA-->
@@ -82,7 +82,6 @@
 		<seealso name='filterdetail' />
 		<seealso name='biquad~' />
 		<seealso name='cascade~' />
-		<seealso name='filter.elliptic' />
 	</seealsolist>
 
 

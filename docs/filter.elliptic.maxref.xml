@@ -6,8 +6,8 @@
 
 <c74object name='filter.elliptic' category='filters'>
 
-	<digest>Nth-order elliptic filter </digest>
-	<description>Nth-order elliptic filter </description>
+	<digest>Nth-order elliptic filterThis object is intended mainly for plotting</digest>
+	<description>Nth-order elliptic filterThis object is intended mainly for plotting. For audio filtering, see <o>filter.elliptic~</o>. </description>
 
 
 	<!--METADATA-->

@@ -11,10 +11,13 @@ using namespace Dsp::ChebyshevII::Design;
 class chebyshev : public filter<chebyshev,false,true>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Chebyshev Type-II filter" };
+	MIN_DESCRIPTION { "Nth-order Chebyshev Type-II filter. "
+					  "The Chebyshev Type-II filter is similar to its Type-1 counterpart except ripples "
+					  "are introduced in the stopband (where they are likely less audible). It also has " 
+					  "a slightly slower rolloff than Type-I." };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.chebyshev2" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

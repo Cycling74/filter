@@ -6,8 +6,8 @@
 
 <c74object name='filter.chebyshev1' category='filters'>
 
-	<digest>Nth-order Chebyshev Type-I filter </digest>
-	<description>Nth-order Chebyshev Type-I filter </description>
+	<digest>Nth-order Chebyshev Type-I filterThis object is intended mainly for plotting</digest>
+	<description>Nth-order Chebyshev Type-I filterThis object is intended mainly for plotting. For audio filtering, see <o>filter.chebyshev1~</o>. </description>
 
 
 	<!--METADATA-->

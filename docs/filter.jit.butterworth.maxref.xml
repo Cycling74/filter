@@ -6,8 +6,8 @@
 
 <c74object name='filter.jit.butterworth' category='filters'>
 
-	<digest>Nth-order Butterworth filter </digest>
-	<description>Nth-order Butterworth filter </description>
+	<digest>Nth-order Butterworth filter</digest>
+	<description>Nth-order Butterworth filter. The Butterworth filter has a slightly faster rolloff than the Bessel filter. It has a maximally-flat magnitude in the passband. </description>
 
 
 	<!--METADATA-->
@@ -40,11 +40,6 @@
 	<!--ATTRIBUTES-->
 
 	<attributelist>
-
-		<attribute name='ripple' get='1' set='1' type='float64' size='1' >
-			<digest>Acceptable passband ripple in magnitude response</digest>
-			<description>Acceptable passband ripple in magnitude response. </description>
-		</attribute>
 
 		<attribute name='bandwidth' get='1' set='1' type='float64' size='1' >
 			<digest>Width of the band in Hz for bandpass and bandstop filters</digest>

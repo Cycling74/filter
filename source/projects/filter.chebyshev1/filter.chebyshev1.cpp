@@ -11,7 +11,9 @@ using namespace Dsp::ChebyshevI::Design;
 class chebyshev : public filter<chebyshev,true,false> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Chebyshev Type-I filter" };
+	MIN_DESCRIPTION { "Nth-order Chebyshev Type-I filter" 
+					  "This object is intended mainly for plotting. "
+					  "For audio filtering, see <o>filter.chebyshev1~</o>. " };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.chebyshev1~" };

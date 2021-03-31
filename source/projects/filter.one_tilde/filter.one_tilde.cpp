@@ -33,7 +33,10 @@ public:
 	outlet<> m_outlet			{this, "(signal) lowpass", "signal"};
 	outlet<> m_outlet_active	{this, "(signal) highpass", "signal"};
 
-	attribute<number> m_cutoff {this, "cutoff", false, description {"Cutoff frequency."}};
+	attribute<number, threadsafe::no, limit::clamp> m_cutoff {this, "cutoff", false, 
+		description {"Cutoff frequency."},
+		range { 0.0, 1.0 }
+	};
 
 	samples<2> operator()(sample x) {
 		sample diff = x - m_feedback;

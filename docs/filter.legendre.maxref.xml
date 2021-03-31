@@ -6,8 +6,8 @@
 
 <c74object name='filter.legendre' category='filters'>
 
-	<digest>Nth-order Legendre filter </digest>
-	<description>Nth-order Legendre filter </description>
+	<digest>Nth-order Legendre filterThis object is intended mainly for plotting</digest>
+	<description>Nth-order Legendre filterThis object is intended mainly for plotting. For audio filtering, see <o>filter.legendre~</o>. </description>
 
 
 	<!--METADATA-->

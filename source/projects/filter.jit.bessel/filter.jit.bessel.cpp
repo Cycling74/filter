@@ -11,7 +11,8 @@ using namespace Dsp::Bessel::Design;
 class jit_bessel : public filter_mop<jit_bessel> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Bessel filter" };
+	MIN_DESCRIPTION { "Nth-order Bessel filter. " 
+					  "The Bessel filter has the slowest rolloff but maximally-linear phase response." };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.bessel~" };

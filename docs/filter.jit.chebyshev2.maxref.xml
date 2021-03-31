@@ -6,8 +6,8 @@
 
 <c74object name='filter.jit.chebyshev2' category='filters'>
 
-	<digest>Nth-order Chebyshev Type-II filter </digest>
-	<description>Nth-order Chebyshev Type-II filter </description>
+	<digest>Nth-order Chebyshev Type-II filter</digest>
+	<description>Nth-order Chebyshev Type-II filter. The Chebyshev Type-II filter is similar to its Type-1 counterpart except ripples are introduced in the stopband. It also has a slightly slower rolloff than Type-I. </description>
 
 
 	<!--METADATA-->

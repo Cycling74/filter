@@ -6,8 +6,8 @@
 
 <c74object name='filter.jit.bessel' category='filters'>
 
-	<digest>Nth-order Bessel filter </digest>
-	<description>Nth-order Bessel filter </description>
+	<digest>Nth-order Bessel filter</digest>
+	<description>Nth-order Bessel filter. The Bessel filter has the slowest rolloff but maximally-linear phase response. </description>
 
 
 	<!--METADATA-->
@@ -40,11 +40,6 @@
 	<!--ATTRIBUTES-->
 
 	<attributelist>
-
-		<attribute name='ripple' get='1' set='1' type='float64' size='1' >
-			<digest>Acceptable passband ripple in magnitude response</digest>
-			<description>Acceptable passband ripple in magnitude response. </description>
-		</attribute>
 
 		<attribute name='bandwidth' get='1' set='1' type='float64' size='1' >
 			<digest>Width of the band in Hz for bandpass and bandstop filters</digest>

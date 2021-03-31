@@ -6,8 +6,8 @@
 
 <c74object name='filter.jit.chebyshev1' category='filters'>
 
-	<digest>Nth-order Chebyshev Type-I filter </digest>
-	<description>Nth-order Chebyshev Type-I filter </description>
+	<digest>Nth-order Chebyshev Type-I filter</digest>
+	<description>Nth-order Chebyshev Type-I filter. The Chebyshev Type-1 filter has a faster rolloff than any of the monotonic filters (Bessel, Butterworth, and Legendre). The tradeoff is that it introduces ripples in the passbands of the frequency and phase responses. It is possible to configure the amount of ripple (at the expense of steepness of the rolloff.) </description>
 
 
 	<!--METADATA-->

@@ -6,8 +6,8 @@
 
 <c74object name='filter.butterworth' category='filters'>
 
-	<digest>Nth-order Butterworth filter </digest>
-	<description>Nth-order Butterworth filter </description>
+	<digest>Nth-order Butterworth filterThis object is intended mainly for plotting</digest>
+	<description>Nth-order Butterworth filterThis object is intended mainly for plotting. For audio filtering, see <o>filter.butterworth~</o>. </description>
 
 
 	<!--METADATA-->
@@ -51,11 +51,6 @@
 			<description>Sampling frequency of the filter. </description>
 		</attribute>
 
-		<attribute name='ripple' get='1' set='1' type='float64' size='1' >
-			<digest>Acceptable passband ripple in magnitude response</digest>
-			<description>Acceptable passband ripple in magnitude response. </description>
-		</attribute>
-
 		<attribute name='response' get='1' set='1' type='symbol' size='1' >
 			<digest>Response or shape of the filter</digest>
 			<description>Response or shape of the filter. </description>
@@ -90,7 +85,7 @@
 		<seealso name='filterdesign' />
 		<seealso name='filterdetail' />
 		<seealso name='slide' />
-		<seealso name='filter.butterworth' />
+		<seealso name='filter.butterworth~' />
 	</seealsolist>
 
 

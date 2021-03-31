@@ -11,10 +11,12 @@ using namespace Dsp::Bessel::Design;
 class bessel : public filter<bessel,false,false>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Bessel filter" };
+	MIN_DESCRIPTION { "Nth-order Bessel filter. " 
+					  "The Bessel filter has the slowest rolloff but maximally-linear phase response."
+					  " It is often used in crossover applications." };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.bessel" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

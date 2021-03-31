@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 412.0, 455.0 ],
+		"rect" : [ 100.0, 100.0, 412.0, 463.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,23 +40,27 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-8",
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"id" : "obj-6",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 91.0, 327.0, 173.0, 20.0 ],
-					"text" : "Lowpass and highpass outputs"
+					"patching_rect" : [ 169.0, 355.0, 76.0, 24.0 ],
+					"text" : "Highpass"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"id" : "obj-4",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 210.0, 284.0, 118.0, 20.0 ],
-					"text" : "Ranges from 0. - 1.0"
+					"patching_rect" : [ 45.0, 355.0, 73.0, 24.0 ],
+					"text" : "Lowpass"
 				}
 
 			}
@@ -67,7 +71,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 378.0, 45.0, 45.0 ]
+					"patching_rect" : [ 23.0, 394.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -78,7 +82,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 23.0, 327.0, 61.0, 22.0 ],
+					"patching_rect" : [ 23.0, 327.0, 153.0, 22.0 ],
 					"text" : "filter.one~"
 				}
 
@@ -116,7 +120,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 9.0, 8.0, 555.0, 113.0 ]
+					"patching_rect" : [ 9.0, 8.0, 341.0, 111.0 ]
 				}
 
 			}
@@ -150,6 +154,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
+					"midpoints" : [ 32.5, 390.0, 58.5, 390.0 ],
 					"order" : 0,
 					"source" : [ "obj-9", 0 ]
 				}
@@ -329,8 +334,8 @@
 , 			{
 				"name" : "rsliderGold",
 				"default" : 				{
-					"color" : [ 0.646639, 0.821777, 0.854593, 1.0 ],
-					"bgcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ]
+					"bgcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ],
+					"color" : [ 0.646639, 0.821777, 0.854593, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

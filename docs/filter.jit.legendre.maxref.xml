@@ -6,8 +6,8 @@
 
 <c74object name='filter.jit.legendre' category='filters'>
 
-	<digest>Nth-order Legendre filter </digest>
-	<description>Nth-order Legendre filter </description>
+	<digest>Nth-order Legendre filter</digest>
+	<description>Nth-order Legendre filter. The Legendre filter has a steeper slope than the Butterworth, but it is not truly flat in the passband. However, it does have the benefit of having a monotonic frequency response which means it doesn't introduce ripples. </description>
 
 
 	<!--METADATA-->

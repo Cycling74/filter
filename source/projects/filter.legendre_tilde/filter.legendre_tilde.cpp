@@ -11,10 +11,12 @@ using namespace Dsp::Legendre::Design;
 class legendre : public filter<legendre>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Legendre filter" };
+	MIN_DESCRIPTION { "Nth-order Legendre filter. "
+					  "The Legendre filter has a steeper slope than the Butterworth, but it is not truly flat in the passband. "
+					  "However, it does have the benefit of having a monotonic frequency response which means it doesn't introduce ripples." };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.legendre" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

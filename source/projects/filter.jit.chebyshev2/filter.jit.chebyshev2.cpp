@@ -11,7 +11,10 @@ using namespace Dsp::ChebyshevII::Design;
 class jit_chebyshev2 : public filter_mop<jit_chebyshev2> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Chebyshev Type-II filter" };
+	MIN_DESCRIPTION { "Nth-order Chebyshev Type-II filter. "
+					  "The Chebyshev Type-II filter is similar to its Type-1 counterpart except ripples "
+					  "are introduced in the stopband. It also has " 
+					  "a slightly slower rolloff than Type-I." };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.chebyshev2~" };

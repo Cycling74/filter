@@ -11,10 +11,12 @@ using namespace Dsp::ChebyshevI::Design;
 class chebyshev : public filter<chebyshev,true,false>, public vector_operator<> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order Chebyshev Type-I filter" };
+	MIN_DESCRIPTION { "Nth-order Chebyshev Type-I filter. The Chebyshev Type-1 filter has a faster rolloff than any of the monotonic filters "
+					  "(Bessel, Butterworth, and Legendre). The tradeoff is that it introduces ripples in the passbands of the frequency and phase responses. "
+					  "It is possible to configure the amount of ripple (at the expense of steepness of the rolloff.)" };
 	MIN_TAGS		{ "audio, filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
-	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~, filter.chebyshev1" };
+	MIN_RELATED		{ "filterdesign, filterdetail, biquad~, cascade~" };
 
 	inlet<>		m_inlet		{ this, "(signal) input" };
 	outlet<>	m_outlet	{ this, "(signal) output", "signal" };

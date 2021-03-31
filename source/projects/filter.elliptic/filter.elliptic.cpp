@@ -11,7 +11,9 @@ using namespace Dsp::Elliptic::Design;
 class elliptic : public filter<elliptic> {
 public:
 
-	MIN_DESCRIPTION { "Nth-order elliptic filter" };
+	MIN_DESCRIPTION { "Nth-order elliptic filter"
+					  "This object is intended mainly for plotting. "
+					  "For audio filtering, see <o>filter.elliptic~</o>. " };
 	MIN_TAGS		{ "filters" };
 	MIN_AUTHOR		{ "Cycling '74" };
 	MIN_RELATED		{ "filterdesign, filterdetail, slide, filter.elliptic~" };
