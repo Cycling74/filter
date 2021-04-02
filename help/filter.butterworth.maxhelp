@@ -161,11 +161,11 @@
 								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 223.5, 292.903197999999975, 91.0, 22.0 ],
-									"text" : "min.list.process"
+									"patching_rect" : [ 223.5, 292.903197999999975, 149.0, 22.0 ],
+									"text" : "zl.group @zlmaxsize 1024"
 								}
 
 							}
@@ -173,11 +173,11 @@
 								"box" : 								{
 									"id" : "obj-20",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 292.903197999999975, 91.0, 22.0 ],
-									"text" : "min.list.process"
+									"patching_rect" : [ 50.0, 292.903197999999975, 149.0, 22.0 ],
+									"text" : "zl.group @zlmaxsize 1024"
 								}
 
 							}
@@ -634,10 +634,6 @@
 				"name" : "filter.butterworth.mxo",
 				"type" : "iLaX"
 			}
-, 			{
-				"name" : "min.list.process.mxo",
-				"type" : "iLaX"
-			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
@@ -728,8 +724,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
